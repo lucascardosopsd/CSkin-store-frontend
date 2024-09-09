@@ -1,7 +1,8 @@
-import { Container } from "@chakra-ui/react";
+import { Container, Flex, Spacer } from "@chakra-ui/react";
 import SkinsList from "../components/SkinsList";
 import InputSearch from "../components/InputSearch";
 import SkinsListOrder from "../components/SkinsListOrder";
+import Filters from "../components/Filters";
 
 export default function Home() {
   return (
@@ -13,7 +14,13 @@ export default function Home() {
       gap={5}
     >
       <InputSearch />
-      <SkinsListOrder />
+      <Flex alignItems="center" gap={3}>
+        <SkinsListOrder />
+
+        <Spacer />
+
+        <Filters />
+      </Flex>
       <SkinsList />
     </Container>
   );
