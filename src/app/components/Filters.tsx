@@ -13,6 +13,7 @@ const Filters = () => {
       display="flex"
       alignItems="center"
       gap={2}
+      h="10svh"
     >
       <Text>Filtros</Text>
 
