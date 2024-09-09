@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Button,
   Flex,
@@ -6,9 +8,13 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
+import { LuMoon, LuSun } from "react-icons/lu";
 
 const Navbar = () => {
   const { toggleColorMode } = useColorMode();
+
+  const { colorMode } = useColorMode();
+
   return (
     <Flex padding={5} alignItems="center" borderBottom="1px">
       <Flex alignItems="center" justify="center">
@@ -21,7 +27,7 @@ const Navbar = () => {
       <Spacer />
 
       <Button size="sm" onClick={toggleColorMode}>
-        Tema
+        {colorMode == "dark" ? <LuSun /> : <LuMoon />}
       </Button>
     </Flex>
   );
