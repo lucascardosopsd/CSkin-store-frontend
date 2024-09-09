@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Box,
   Button,
   Flex,
   Grid,
@@ -122,43 +123,45 @@ const SkinsList = () => {
   ];
 
   return (
-    <Grid templateColumns="repeat(5, 1fr)" gap={6}>
-      {skins.map((skin) => (
-        <Card
-          key={skin.id}
-          cardHeader={<Image src={skin.image} />}
-          cardContent={
-            <Flex flexDir="column" padding={4}>
-              <Text fontSize={18} fontWeight="bold" lineHeight={1}>
-                {skin.name}
-              </Text>
-
-              <Text color="GrayText">{skin.category}</Text>
-
-              <Flex>
-                <Text fontSize={16}>
-                  {formatPrice(skin.price, "pt-BR", "BRL")}
+    <Box overflowY="auto" h="68svh">
+      <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+        {skins.map((skin) => (
+          <Card
+            key={skin.id}
+            cardHeader={<Image src={skin.image} />}
+            cardContent={
+              <Flex flexDir="column" padding={4}>
+                <Text fontSize={18} fontWeight="bold" lineHeight={1}>
+                  {skin.name}
                 </Text>
 
-                <Spacer />
+                <Text color="GrayText">{skin.category}</Text>
 
-                <Text>Ft/{skin.float}</Text>
+                <Flex>
+                  <Text fontSize={16}>
+                    {formatPrice(skin.price, "pt-BR", "BRL")}
+                  </Text>
+
+                  <Spacer />
+
+                  <Text>Ft/{skin.float}</Text>
+                </Flex>
               </Flex>
-            </Flex>
-          }
-          cardFooter={
-            <Flex borderTop="1px">
-              <Button w="100%" variant="ghost">
-                Comprar
-              </Button>
-              <Button variant="ghost">
-                <Icon as={LuShoppingCart} />
-              </Button>
-            </Flex>
-          }
-        />
-      ))}
-    </Grid>
+            }
+            cardFooter={
+              <Flex borderTop="1px">
+                <Button w="100%" variant="ghost">
+                  Comprar
+                </Button>
+                <Button variant="ghost">
+                  <Icon as={LuShoppingCart} />
+                </Button>
+              </Flex>
+            }
+          />
+        ))}
+      </Grid>
+    </Box>
   );
 };
 

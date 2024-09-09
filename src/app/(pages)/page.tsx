@@ -1,4 +1,4 @@
-import { Container, Spacer } from "@chakra-ui/react";
+import { Container, Flex, Spacer } from "@chakra-ui/react";
 import SkinsList from "../components/SkinsList";
 import InputSearch from "../components/InputSearch";
 import SkinsListOrder from "../components/SkinsListOrder";
@@ -10,14 +10,14 @@ export default function Home() {
       maxW="1080px"
       display="flex"
       flexDir="column"
-      gap={5}
+      gap={2}
       p={5}
-      overflowY="auto"
-      h="88svh"
+      pb={0}
     >
-      <InputSearch />
-
-      <SkinsListOrder />
+      <Flex gap={5}>
+        <SkinsListOrder />
+        <InputSearch />
+      </Flex>
 
       <Spacer />
 
