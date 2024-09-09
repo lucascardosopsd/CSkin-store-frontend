@@ -1,6 +1,7 @@
 import { Container } from "@chakra-ui/react";
 import SkinsList from "../components/SkinsList";
 import InputSearch from "../components/InputSearch";
+import SkinsListOrder from "../components/SkinsListOrder";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       gap={5}
     >
       <InputSearch />
+      <SkinsListOrder />
       <SkinsList />
     </Container>
   );
