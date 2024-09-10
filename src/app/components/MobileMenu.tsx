@@ -1,10 +1,9 @@
 "use client";
-
 import { Button, Icon, useColorMode } from "@chakra-ui/react";
 import { useState } from "react";
 import { LuMenu } from "react-icons/lu";
 import Modal from "./Modal";
-import SearchForm from "./forms/SearchForm";
+import FilterForm from "./forms/FilterForm";
 
 const MobileMenu = () => {
   const { colorMode } = useColorMode();
@@ -35,7 +34,7 @@ const MobileMenu = () => {
         title="Menu"
         submitTitle="Aplicar"
       >
-        <SearchForm />
+        <FilterForm />
       </Modal>
     </>
   );

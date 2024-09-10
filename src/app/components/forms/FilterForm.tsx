@@ -10,7 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const SearchForm = () => {
+const FilterForm = () => {
   return (
     <form onSubmit={() => {}}>
       <Flex
@@ -96,4 +96,4 @@ const SearchForm = () => {
   );
 };
 
-export default SearchForm;
+export default FilterForm;

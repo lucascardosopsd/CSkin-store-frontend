@@ -1,8 +1,8 @@
 import { Container, Flex } from "@chakra-ui/react";
-import SearchForm from "../components/forms/SearchForm";
 import api from "../lib/axios";
 import { SkinProps } from "../types/skins";
 import SkinsGrid from "../components/SkinsList";
+import FilterForm from "../components/forms/FilterForm";
 
 export default async function Home() {
   const { data } = await api.get<SkinProps[]>("/skins");
@@ -25,7 +25,7 @@ export default async function Home() {
         flexDir="column"
         gap={2}
       >
-        {<SearchForm />}
+        {<FilterForm />}
       </Flex>
 
       <SkinsGrid skins={data} />
