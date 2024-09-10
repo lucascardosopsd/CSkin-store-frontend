@@ -35,7 +35,10 @@ const Modal = ({
   return (
     <Flex
       as={motion.div}
-      display="flex"
+      display={{
+        base: "flex",
+        md: "none",
+      }}
       flexDir="column"
       position="absolute"
       top={0}
