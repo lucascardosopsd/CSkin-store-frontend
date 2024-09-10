@@ -1,6 +1,14 @@
 "use client";
-
-import { Box, Button, Flex, Icon, Image, Spacer, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Icon,
+  Image,
+  Spacer,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
 import { SkinProps } from "../types/skins";
 import Card from "./Card";
 import { formatPrice } from "../tools/formatPrice";
@@ -11,6 +19,8 @@ interface SkinCardProps {
 }
 
 const SkinCard = ({ skin }: SkinCardProps) => {
+  const { colorMode } = useColorMode();
+
   return (
     <Card
       m="auto"
@@ -20,17 +30,30 @@ const SkinCard = ({ skin }: SkinCardProps) => {
         transform: "scale(1.1)",
       }}
       cardHeader={
-        <Box bgGradient="radial(circle, gray.600, gray.800)">
+        <Box
+          bgGradient={
+            colorMode == "light"
+              ? "radial(circle, yellow.100, orange.400)"
+              : "radial(circle, gray.600, gray.800)"
+          }
+        >
           <Image src={skin.image} />
         </Box>
       }
       cardContent={
         <Flex flexDir="column" padding={4}>
-          <Text fontSize={18} fontWeight="bold" lineHeight={1}>
+          <Text
+            fontSize={18}
+            fontWeight="bold"
+            lineHeight={1}
+            color="orange.400"
+          >
             {skin.name}
           </Text>
 
-          <Text color="GrayText">{skin.category}</Text>
+          <Text color="GrayText" fontWeight="600">
+            {skin.category}
+          </Text>
 
           <Flex>
             <Text fontSize={16}>{formatPrice(skin.price, "pt-BR", "BRL")}</Text>
@@ -43,11 +66,17 @@ const SkinCard = ({ skin }: SkinCardProps) => {
       }
       cardFooter={
         <Flex borderTopWidth="1px">
-          <Button w="100%" variant="ghost">
-            Comprar
+          <Button
+            w="100%"
+            variant="ghost"
+            bgGradient="linear(to-r, yellow.400, orange.500)"
+            color="gray.100"
+            fontWeight="bold"
+          >
+            COMPRAR
           </Button>
           <Button variant="ghost">
-            <Icon as={LuShoppingCart} />
+            <Icon as={LuShoppingCart} fontSize={22} />
           </Button>
         </Flex>
       }
