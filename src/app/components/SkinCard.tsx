@@ -69,7 +69,7 @@ const SkinCard = ({ skin }: SkinCardProps) => {
           <Button
             w="100%"
             variant="ghost"
-            bgGradient="linear(to-r, yellow.400, orange.500)"
+            bgGradient="linear(to-r, yellow.500, orange.600)"
             color="gray.100"
             fontWeight="bold"
           >
