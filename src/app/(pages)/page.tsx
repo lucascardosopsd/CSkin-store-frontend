@@ -25,7 +25,7 @@ export default async function Home({ searchParams }: HomeProps) {
   } = await api.get<AxiosSkinsResProps>("/skins", {
     params: {
       ...searchParams,
-      take: 2,
+      take: 10,
       page: page - 1,
     },
   });
