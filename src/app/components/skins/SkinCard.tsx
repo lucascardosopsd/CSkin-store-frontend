@@ -30,7 +30,6 @@ const SkinCard = ({ skin }: SkinCardProps) => {
         transform: "scale(1.1)",
         boxShadow: "glow",
       }}
-      h={320}
     >
       <CardHeader>
         <Box
@@ -59,8 +58,8 @@ const SkinCard = ({ skin }: SkinCardProps) => {
             {skin.category}
           </Text>
 
-          <Flex>
-            <Text fontSize={16}>{formatPrice(skin.price, "pt-BR", "BRL")}</Text>
+          <Flex w="full">
+            <Text fontSize={24}>{formatPrice(skin.price, "pt-BR", "BRL")}</Text>
 
             <Spacer />
 

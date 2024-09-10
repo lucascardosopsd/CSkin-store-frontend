@@ -11,4 +11,8 @@ export const categories = [
     id: 3,
     title: "pistola",
   },
+  {
+    id: 4,
+    title: "faca",
+  },
 ];
