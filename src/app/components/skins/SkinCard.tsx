@@ -44,7 +44,7 @@ const SkinCard = ({ skin }: SkinCardProps) => {
         </Box>
       </CardHeader>
 
-      <CardContent>
+      <CardContent bgGradient="linear(to-b, gray.900, gray.700)">
         <Flex flexDir="column" alignItems="start" h="full">
           <Text
             fontSize={18}
