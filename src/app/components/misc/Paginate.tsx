@@ -1,5 +1,5 @@
 "use client";
-import { Button, Flex, FlexProps, Icon } from "@chakra-ui/react";
+import { Button, Flex, FlexProps, Icon, useColorMode } from "@chakra-ui/react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
@@ -13,6 +13,7 @@ const Paginate = ({ pages, ...rest }: PaginateProps) => {
   const { replace } = useRouter();
   const params = new URLSearchParams(searchParams);
   const paramsPage = Number(params.get("page") || 1);
+  const { colorMode } = useColorMode();
 
   const handleNext = () => {
     if (Number(paramsPage) < pages) {
@@ -56,7 +57,13 @@ const Paginate = ({ pages, ...rest }: PaginateProps) => {
         onClick={handlePrev}
         cursor="pointer"
         variant="outline"
-        bg={paramsPage !== 1 ? "gray.500" : ""}
+        bg={
+          paramsPage !== 1
+            ? colorMode == "dark"
+              ? "gray.500"
+              : "gray.100"
+            : ""
+        }
       >
         <Icon as={BiChevronLeft} />
       </Button>
@@ -73,7 +80,14 @@ const Paginate = ({ pages, ...rest }: PaginateProps) => {
       <Button
         onClick={handleNext}
         cursor="pointer"
-        bg={paramsPage !== pages ? "gray.500" : ""}
+        variant="outline"
+        bg={
+          paramsPage !== pages
+            ? colorMode == "dark"
+              ? "gray.500"
+              : "gray.100"
+            : ""
+        }
       >
         <Icon as={BiChevronRight} />
       </Button>
