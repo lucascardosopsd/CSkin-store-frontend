@@ -2,7 +2,7 @@
 import { Button, Icon, useColorMode } from "@chakra-ui/react";
 import { useState } from "react";
 import { LuMenu } from "react-icons/lu";
-import Modal from "./Modal";
+import Modal from "./ui/Modal";
 import FilterForm from "./forms/FilterForm";
 
 const MobileMenu = () => {

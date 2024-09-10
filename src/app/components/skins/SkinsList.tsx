@@ -1,6 +1,6 @@
 "use client";
 import { Box, Grid } from "@chakra-ui/react";
-import { SkinProps } from "../types/skins";
+import { SkinProps } from "../../types/skins";
 import SkinCard from "./SkinCard";
 
 interface SkinsListProps {

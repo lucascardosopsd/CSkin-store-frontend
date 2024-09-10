@@ -1,7 +1,7 @@
 import { Container } from "@chakra-ui/react";
 import api from "../lib/axios";
 import { SkinProps } from "../types/skins";
-import SkinsGrid from "../components/SkinsList";
+import SkinsGrid from "../components/skins/SkinsList";
 
 export default async function Home() {
   const { data } = await api.get<SkinProps[]>("/skins");

@@ -2,7 +2,7 @@
 import { ReactNode } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 import FilterForm from "../components/forms/FilterForm";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/ui/Navbar";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (

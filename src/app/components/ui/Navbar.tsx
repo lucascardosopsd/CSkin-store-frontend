@@ -10,7 +10,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { LuMoon, LuSun } from "react-icons/lu";
-import MobileMenu from "./MobileMenu";
+import MobileMenu from "../MobileMenu";
 
 const Navbar = () => {
   const { toggleColorMode } = useColorMode();

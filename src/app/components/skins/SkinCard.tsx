@@ -9,9 +9,9 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import { SkinProps } from "../types/skins";
-import Card from "./Card";
-import { formatPrice } from "../tools/formatPrice";
+import { SkinProps } from "../../types/skins";
+import Card from "../ui/Card";
+import { formatPrice } from "../../tools/formatPrice";
 import { LuShoppingCart } from "react-icons/lu";
 
 interface SkinCardProps {
