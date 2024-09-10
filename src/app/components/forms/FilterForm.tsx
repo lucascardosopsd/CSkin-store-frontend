@@ -8,7 +8,6 @@ import {
   Flex,
   Input,
   Select,
-  Spacer,
   Text,
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -70,11 +69,24 @@ const FilterForm = () => {
 
   return (
     <form onSubmit={form.handleSubmit(handleSubmit)}>
-      <Flex flexDir="column" gap={{ base: 5, lg: 2 }}>
-        <Flex gap={5}>
+      <Flex
+        flexDir="column"
+        gap={5}
+        h="full"
+        px={5}
+        w={{
+          base: "full",
+          lg: "300px",
+        }}
+      >
+        <Box display="flex" alignItems="center" gap={2} flexDir="column">
+          <Text fontSize={24} fontWeight={600}>
+            Filtros
+          </Text>
+
+          {/* Order Filter */}
           <Select
             placeholder="Ordenar"
-            maxW={150}
             id="selectOrder"
             {...form.register("orderBy")}
           >
@@ -83,40 +95,15 @@ const FilterForm = () => {
             <option value="float">Menor Float</option>
           </Select>
 
+          {/* Name Filter */}
+
           <Input placeholder="Busque por nome" {...form.register("name")} />
-        </Flex>
-
-        <Spacer
-          display={{
-            base: "none",
-            lg: "block",
-          }}
-        />
-
-        <Box
-          borderWidth="1px"
-          paddingY={2}
-          paddingX={4}
-          rounded="lg"
-          display="flex"
-          alignItems="center"
-          gap={2}
-          flexDir={{
-            base: "column",
-            lg: "row",
-          }}
-          h={{
-            base: "auto",
-            lg: "10svh",
-          }}
-        >
-          <Text>Filtros</Text>
 
           {/* Categories Filter */}
 
           <Select
             placeholder="Categoria"
-            maxW={["full", "full", 150]}
+            maxW="full"
             {...form.register("category")}
           >
             {categories.map((category) => (
@@ -126,17 +113,11 @@ const FilterForm = () => {
             ))}
           </Select>
 
-          <Divider
-            orientation="vertical"
-            h={12}
-            display={{ base: "none", lg: "block" }}
-          />
-
           <Divider w="full" display={{ base: "block", lg: "none" }} />
 
           {/* Start Price Filter */}
 
-          <Text display={{ base: "block", lg: "none" }}>Preço</Text>
+          <Text>Preço</Text>
 
           <Controller
             control={form.control}
@@ -166,7 +147,7 @@ const FilterForm = () => {
             )}
           />
 
-          <Text display={{ base: "none", lg: "block" }}>-</Text>
+          <Text>Até</Text>
 
           {/* End Price Filter */}
 
@@ -198,19 +179,13 @@ const FilterForm = () => {
             )}
           />
 
-          <Divider
-            orientation="vertical"
-            h={12}
-            display={{ base: "none", lg: "block" }}
-          />
-
-          <Divider w="full" display={{ base: "block", lg: "none" }} />
+          <Divider w="full" />
 
           {/* Float filter */}
-          <Text display={{ base: "block", lg: "none" }}>Float</Text>
+          <Text>Float</Text>
 
           <Input
-            placeholder="Float"
+            placeholder="0.0"
             type="number"
             maxLength={2}
             {...form.register("float")}
