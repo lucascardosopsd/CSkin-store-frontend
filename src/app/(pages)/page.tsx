@@ -1,7 +1,8 @@
 import { Container } from "@chakra-ui/react";
 import api from "../lib/axios";
-import { SkinProps } from "../types/skins";
+import { AxiosSkinsResProps } from "../types/skins";
 import SkinsGrid from "../components/skins/SkinsList";
+import Paginate from "../components/misc/Paginate";
 
 interface HomeProps {
   searchParams?: {
@@ -12,12 +13,21 @@ interface HomeProps {
     startPrice?: string;
     endPrice?: string;
     float: string;
+    page?: string;
   };
 }
 
 export default async function Home({ searchParams }: HomeProps) {
-  const { data } = await api.get<SkinProps[]>("/skins", {
-    params: searchParams,
+  const page = Number(searchParams?.page || 1);
+
+  const {
+    data: { skins, pages },
+  } = await api.get<AxiosSkinsResProps>("/skins", {
+    params: {
+      ...searchParams,
+      take: 2,
+      page: page - 1,
+    },
   });
 
   return (
@@ -30,7 +40,9 @@ export default async function Home({ searchParams }: HomeProps) {
       pb={0}
       mt="8rem"
     >
-      <SkinsGrid skins={data} />
+      <SkinsGrid skins={skins} />
+
+      <Paginate pages={pages} w="full" justifyContent="end" />
     </Container>
   );
 }

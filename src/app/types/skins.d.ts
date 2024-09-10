@@ -8,3 +8,8 @@ export interface SkinProps {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface AxiosSkinsResProps {
+  skins: SkinProps[];
+  pages: number;
+}
