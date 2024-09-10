@@ -1,12 +1,12 @@
 "use client";
 
 import {
+  Box,
   Button,
   Divider,
   Flex,
   Image,
   Spacer,
-  Text,
   useColorMode,
 } from "@chakra-ui/react";
 import { LuMoon, LuSun } from "react-icons/lu";
@@ -21,18 +21,24 @@ const Navbar = () => {
     <Flex
       padding={5}
       alignItems="center"
-      borderWidth="1px"
+      borderBottomWidth="1px"
       position="fixed"
       top={0}
       w="full"
-      bg={colorMode == "dark" ? "gray.800" : "gray.200"}
+      bg="gray.900"
       zIndex={50}
     >
       <Flex alignItems="center" justify="center">
         <Image src="/logo.png" alt="Logo" boxSize="100px" />
-        <Text fontSize={22} fontWeight="bold">
-          CSkin Store
-        </Text>
+        <Flex color="gray.100" gap={1} alignItems="center">
+          <Box fontWeight="bold" fontSize={36}>
+            CSkin
+          </Box>
+          <Divider orientation="vertical" h={10} />
+          <Box fontSize={24} fontWeight={400}>
+            Store{" "}
+          </Box>
+        </Flex>
       </Flex>
 
       <Spacer />
@@ -42,7 +48,14 @@ const Navbar = () => {
           {colorMode == "dark" ? <LuSun /> : <LuMoon />}
         </Button>
 
-        <Divider orientation="vertical" h={10} />
+        <Divider
+          orientation="vertical"
+          h={10}
+          display={{
+            base: "block",
+            lg: "none",
+          }}
+        />
 
         <MobileMenu />
       </Flex>
