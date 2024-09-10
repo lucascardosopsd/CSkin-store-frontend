@@ -39,12 +39,14 @@ export default async function Home({ searchParams }: HomeProps) {
       gap={2}
       p={5}
       mt="8rem"
+      position="relative"
     >
       <SkinsGrid skins={skins} />
 
       <Paginate
         pages={pages}
         w="full"
+        zIndex={41}
         justifyContent={{ base: "center", lg: "end" }}
       />
     </Container>
