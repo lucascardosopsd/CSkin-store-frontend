@@ -43,7 +43,13 @@ const SkinCard = ({ skin }: SkinCardProps) => {
         </Box>
       </CardHeader>
 
-      <CardContent bgGradient="linear(to-b, gray.900, gray.700)">
+      <CardContent
+        bgGradient={
+          colorMode == "dark"
+            ? "linear(to-b, gray.900, gray.700)"
+            : "linear(to-b, white, white, gray.100)"
+        }
+      >
         <Flex flexDir="column" alignItems="start" h="full">
           <Text
             fontSize={18}
@@ -59,7 +65,9 @@ const SkinCard = ({ skin }: SkinCardProps) => {
           </Text>
 
           <Flex w="full">
-            <Text fontSize={24}>{formatPrice(skin.price, "pt-BR", "BRL")}</Text>
+            <Text fontSize={24} fontWeight={600}>
+              {formatPrice(skin.price, "pt-BR", "BRL")}
+            </Text>
 
             <Spacer />
 
