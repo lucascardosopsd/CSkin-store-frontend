@@ -7,10 +7,11 @@ import {
   Flex,
   Image,
   Spacer,
+  Text,
   useColorMode,
 } from "@chakra-ui/react";
 import { LuMoon, LuSun } from "react-icons/lu";
-import MobileMenu from "../MobileMenu";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   const { toggleColorMode } = useColorMode();
@@ -31,13 +32,17 @@ const Navbar = () => {
       <Flex alignItems="center" justify="center">
         <Image src="/logo.png" alt="Logo" boxSize="100px" />
         <Flex color="gray.100" gap={1} alignItems="center">
-          <Box fontWeight="bold" fontSize={36}>
+          <Text
+            fontWeight="bold"
+            fontSize={36}
+            display="flex"
+            alignItems="center"
+          >
             CSkin
-          </Box>
+            <Box fontWeight={200}>Store</Box>
+          </Text>
+
           <Divider orientation="vertical" h={10} />
-          <Box fontSize={24} fontWeight={400}>
-            Store{" "}
-          </Box>
         </Flex>
       </Flex>
 
