@@ -90,7 +90,9 @@ const FilterForm = () => {
           <Input placeholder="Float" type="number" maxLength={2} />
         </Box>
 
-        <Button type="submit">Aplicar</Button>
+        <Button type="submit" bg="orange.500">
+          Aplicar
+        </Button>
       </Flex>
     </form>
   );
