@@ -123,7 +123,7 @@ const SkinsList = () => {
   ];
 
   return (
-    <Box overflowY="auto" h="68svh" mt={2}>
+    <Box overflowY="auto" h="67svh" mt={2} pr={5}>
       <Grid templateColumns="repeat(5, 1fr)" gap={6}>
         {skins.map((skin) => (
           <Card
