@@ -46,18 +46,20 @@ const FilterForm = ({ afterSubmit }: FIlterFormProps) => {
     if (orderBy) {
       if (orderBy == "lowestPrice") {
         params.set("orderBy", "price");
-        params.set("order", "desc");
+        params.set("order", "asc");
       }
 
       if (orderBy == "highestPrice") {
         params.set("orderBy", "price");
-        params.set("order", "asc");
+        params.set("order", "desc");
       }
 
       if (orderBy == "float") {
         params.set("orderBy", "float");
         params.set("order", "asc");
       }
+
+      delete data.orderBy;
     }
 
     Object.entries(data).forEach(([key, value]) => {
