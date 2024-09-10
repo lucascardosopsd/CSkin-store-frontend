@@ -101,6 +101,7 @@ const FilterForm = ({ afterSubmit }: FIlterFormProps) => {
             id="selectOrder"
             {...form.register("orderBy")}
           >
+            <option value="">Padrão (Nome)</option>
             <option value="lowestPrice">Menor Preço</option>
             <option value="highestPrice">Maior Preço</option>
             <option value="float">Menor Float</option>
