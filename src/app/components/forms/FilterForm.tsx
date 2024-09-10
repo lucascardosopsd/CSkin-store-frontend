@@ -208,7 +208,7 @@ const FilterForm = ({ afterSubmit }: FIlterFormProps) => {
           />
         </Box>
 
-        <Button type="submit" bg="orange.500">
+        <Button type="submit" bg="orange.500" color="white" fontWeight={600}>
           Aplicar
         </Button>
       </Flex>
