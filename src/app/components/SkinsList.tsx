@@ -130,6 +130,7 @@ const SkinsList = () => {
         base: 0,
         lg: 5,
       }}
+      pb={10}
     >
       <Grid
         templateColumns={{
