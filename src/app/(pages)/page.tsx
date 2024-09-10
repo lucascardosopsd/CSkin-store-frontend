@@ -1,8 +1,12 @@
 import { Container, Flex } from "@chakra-ui/react";
 import SkinsList from "../components/SkinsList";
 import SearchForm from "../components/forms/SearchForm";
+import api from "../lib/axios";
+import { SkinProps } from "../types/skins";
 
-export default function Home() {
+export default async function Home() {
+  const { data } = await api.get<SkinProps[]>("/skins");
+
   return (
     <Container
       maxW="1080px"
@@ -24,7 +28,7 @@ export default function Home() {
         {<SearchForm />}
       </Flex>
 
-      <SkinsList />
+      <SkinsList skins={data} />
     </Container>
   );
 }

@@ -13,115 +13,13 @@ import {
 import Card from "./Card";
 import { LuShoppingCart } from "react-icons/lu";
 import { formatPrice } from "../tools/formatPrice";
+import { SkinProps } from "../types/skins";
 
-const SkinsList = () => {
-  const skins = [
-    {
-      id: "1446653768",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "3146561584",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "6892581528",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "1638270528",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "1807834624",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "2951719982",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "0086616115",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "2329992239",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "7849121841",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "9313897245",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "5268422018",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "2762760786",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-    {
-      id: "4295870078",
-      name: "M4A4 - Temukau",
-      image: "https://i.imgur.com/bucHCP2.png",
-      category: "Categoria 1",
-      float: 0.2,
-      price: 50,
-    },
-  ];
+interface SkinsListProps {
+  skins: SkinProps[];
+}
 
+const SkinsList = ({ skins }: SkinsListProps) => {
   return (
     <Box
       overflowY="auto"
