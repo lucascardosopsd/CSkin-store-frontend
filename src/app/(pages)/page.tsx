@@ -3,8 +3,22 @@ import api from "../lib/axios";
 import { SkinProps } from "../types/skins";
 import SkinsGrid from "../components/skins/SkinsList";
 
-export default async function Home() {
-  const { data } = await api.get<SkinProps[]>("/skins");
+interface HomeProps {
+  searchParams?: {
+    name?: string;
+    category?: string;
+    order?: string;
+    orderBy?: string;
+    startPrice?: string;
+    endPrice?: string;
+    float: string;
+  };
+}
+
+export default async function Home({ searchParams }: HomeProps) {
+  const { data } = await api.get<SkinProps[]>("/skins", {
+    params: searchParams,
+  });
 
   return (
     <Container
