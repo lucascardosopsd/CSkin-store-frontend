@@ -43,7 +43,7 @@ const Modal = ({
       position="absolute"
       top={0}
       left={0}
-      h="full"
+      h="100svh"
       w="full"
       zIndex={50}
       bg={colorMode == "dark" ? "gray.900" : "gray.200"}
