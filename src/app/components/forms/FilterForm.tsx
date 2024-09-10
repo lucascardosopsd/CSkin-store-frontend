@@ -16,7 +16,11 @@ import { Controller, useForm } from "react-hook-form";
 import { NumericFormat } from "react-number-format";
 import { z } from "zod";
 
-const FilterForm = () => {
+interface FIlterFormProps {
+  afterSubmit?: () => void;
+}
+
+const FilterForm = ({ afterSubmit }: FIlterFormProps) => {
   const form = useForm({
     defaultValues: {
       name: "",
@@ -68,7 +72,12 @@ const FilterForm = () => {
   };
 
   return (
-    <form onSubmit={form.handleSubmit(handleSubmit)}>
+    <form
+      onSubmit={form.handleSubmit((data) => {
+        handleSubmit(data);
+        afterSubmit && afterSubmit();
+      })}
+    >
       <Flex
         flexDir="column"
         gap={5}

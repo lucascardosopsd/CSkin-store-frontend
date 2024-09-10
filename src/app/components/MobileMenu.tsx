@@ -10,8 +10,6 @@ const MobileMenu = () => {
 
   const [open, setOpen] = useState(false);
 
-  const handleSetParams = async () => {};
-
   return (
     <>
       <Button
@@ -34,7 +32,7 @@ const MobileMenu = () => {
         title="Menu"
         submitTitle="Aplicar"
       >
-        <FilterForm />
+        <FilterForm afterSubmit={() => setOpen(false)} />
       </Modal>
     </>
   );
