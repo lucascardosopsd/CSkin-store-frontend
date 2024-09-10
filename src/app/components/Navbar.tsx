@@ -18,7 +18,16 @@ const Navbar = () => {
   const { colorMode } = useColorMode();
 
   return (
-    <Flex padding={5} alignItems="center" borderWidth="1px">
+    <Flex
+      padding={5}
+      alignItems="center"
+      borderWidth="1px"
+      position="fixed"
+      top={0}
+      w="full"
+      bg={colorMode == "dark" ? "gray.800" : "gray.200"}
+      zIndex={50}
+    >
       <Flex alignItems="center" justify="center">
         <Image src="/logo.png" alt="Logo" boxSize="100px" />
         <Text fontSize={22} fontWeight="bold">

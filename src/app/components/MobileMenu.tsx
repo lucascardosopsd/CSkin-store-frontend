@@ -22,7 +22,7 @@ const MobileMenu = () => {
         bg={colorMode == "dark" ? "gray.800" : "gray.200"}
         display={{
           base: "flex",
-          md: "none",
+          lg: "none",
         }}
       >
         <Icon as={LuMenu} />

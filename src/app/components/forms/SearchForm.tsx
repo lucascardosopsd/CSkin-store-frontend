@@ -17,7 +17,7 @@ const SearchForm = () => {
         flexDir="column"
         gap={{
           base: 5,
-          md: 0,
+          lg: 2,
         }}
       >
         <Flex gap={5}>
@@ -32,7 +32,7 @@ const SearchForm = () => {
         <Spacer
           display={{
             base: "none",
-            md: "block",
+            lg: "block",
           }}
         />
 
@@ -46,11 +46,11 @@ const SearchForm = () => {
           gap={2}
           flexDir={{
             base: "column",
-            md: "row",
+            lg: "row",
           }}
           h={{
             base: "auto",
-            md: "10svh",
+            lg: "10svh",
           }}
         >
           <Text>Filtros</Text>

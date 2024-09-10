@@ -37,7 +37,7 @@ const Modal = ({
       as={motion.div}
       display={{
         base: "flex",
-        md: "none",
+        lg: "none",
       }}
       flexDir="column"
       position="absolute"

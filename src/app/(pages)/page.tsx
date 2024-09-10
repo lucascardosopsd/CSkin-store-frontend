@@ -11,11 +11,12 @@ export default function Home() {
       gap={2}
       p={5}
       pb={0}
+      pt="15svh"
     >
       <Flex
         display={{
           base: "none",
-          md: "flex",
+          lg: "flex",
         }}
         flexDir="column"
         gap={2}

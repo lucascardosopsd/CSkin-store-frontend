@@ -125,17 +125,18 @@ const SkinsList = () => {
   return (
     <Box
       overflowY="auto"
-      h="67svh"
       mt={2}
       pr={{
         base: 0,
-        mg: 5,
+        lg: 5,
       }}
     >
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",
-          md: "repeat(5, 1fr)",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
+          xl: "repeat(4, 1fr)",
         }}
         gap={6}
         mx="auto"
