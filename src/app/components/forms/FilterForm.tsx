@@ -117,9 +117,14 @@ const FilterForm = ({ afterSubmit }: FIlterFormProps) => {
             maxW="full"
             {...form.register("category")}
           >
+            <option value="" key="clear">
+              Todas
+            </option>
+
             {categories.map((category) => (
               <option value={category.title} key={category.id}>
-                {category.title}
+                {category.title.charAt(0).toUpperCase() +
+                  category.title.slice(1)}
               </option>
             ))}
           </Select>
