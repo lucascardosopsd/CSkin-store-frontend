@@ -21,7 +21,7 @@ const SkinsGrid = ({ skins }: SkinsListProps) => {
         mx="auto"
       >
         {skins.map((skin) => (
-          <SkinCard skin={skin} />
+          <SkinCard skin={skin} key={skin.id} />
         ))}
       </Grid>
     </Box>
