@@ -6,7 +6,7 @@ import { LuSearch } from "react-icons/lu";
 const Filters = () => {
   return (
     <Box
-      border="1px"
+      borderWidth="1px"
       paddingY={2}
       paddingX={4}
       rounded="lg"

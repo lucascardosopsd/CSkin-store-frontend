@@ -123,7 +123,7 @@ const SkinsList = () => {
   ];
 
   return (
-    <Box overflowY="auto" h="68svh">
+    <Box overflowY="auto" h="68svh" mt={2}>
       <Grid templateColumns="repeat(5, 1fr)" gap={6}>
         {skins.map((skin) => (
           <Card
@@ -149,7 +149,7 @@ const SkinsList = () => {
               </Flex>
             }
             cardFooter={
-              <Flex borderTop="1px">
+              <Flex borderTopWidth="1px">
                 <Button w="100%" variant="ghost">
                   Comprar
                 </Button>
