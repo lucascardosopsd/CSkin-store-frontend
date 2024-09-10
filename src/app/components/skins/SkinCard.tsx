@@ -28,6 +28,7 @@ const SkinCard = ({ skin }: SkinCardProps) => {
       transition="all 0.2s"
       _hover={{
         transform: "scale(1.1)",
+        boxShadow: "glow",
       }}
       h={320}
     >

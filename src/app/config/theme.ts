@@ -8,6 +8,9 @@ const theme = extendTheme({
     initialColorMode: "dark",
     useSystemColorMode: false,
   },
+  shadows: {
+    glow: "0 0 10px 5px rgba(255,162,0)",
+  },
   styles: {
     global: (props: StyleFunctionProps) => ({
       body: {
