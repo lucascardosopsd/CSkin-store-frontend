@@ -123,10 +123,26 @@ const SkinsList = () => {
   ];
 
   return (
-    <Box overflowY="auto" h="67svh" mt={2} pr={5}>
-      <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+    <Box
+      overflowY="auto"
+      h="67svh"
+      mt={2}
+      pr={{
+        base: 0,
+        mg: 5,
+      }}
+    >
+      <Grid
+        templateColumns={{
+          base: "repeat(1, 1fr)",
+          md: "repeat(5, 1fr)",
+        }}
+        gap={6}
+        mx="auto"
+      >
         {skins.map((skin) => (
           <Card
+            m="auto"
             key={skin.id}
             cardHeader={<Image src={skin.image} />}
             cardContent={
