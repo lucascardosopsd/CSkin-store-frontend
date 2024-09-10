@@ -7,7 +7,7 @@ interface Cardprops extends BoxProps {
   cardFooter?: ReactNode;
 }
 
-const Card = ({ cardHeader, cardContent, cardFooter, ...rest }: Cardprops) => {
+export const Card = ({ children, ...rest }: Cardprops) => {
   return (
     <Box
       maxW="sm"
@@ -16,13 +16,48 @@ const Card = ({ cardHeader, cardContent, cardFooter, ...rest }: Cardprops) => {
       overflow="hidden"
       display="flex"
       flexDir="column"
+      justifyContent="space-between"
       {...rest}
     >
-      <Box>{cardHeader}</Box>
-      <Box>{cardContent}</Box>
-      <Box>{cardFooter}</Box>
+      {children}
     </Box>
   );
 };
 
-export default Card;
+// CardHeader
+
+interface CardHeaderprops extends BoxProps {
+  children: ReactNode;
+}
+
+export const CardHeader = ({ children, ...rest }: CardHeaderprops) => {
+  return <Box {...rest}>{children}</Box>;
+};
+
+// CardContent
+
+interface CardContentprops extends BoxProps {
+  children: ReactNode;
+}
+
+export const CardContent = ({ children, ...rest }: CardContentprops) => {
+  return (
+    <Box h="full" p="4" {...rest}>
+      {children}
+    </Box>
+  );
+};
+
+// CardFooter
+
+interface CardFooterprops extends BoxProps {
+  children: ReactNode;
+}
+
+export const CardFooter = ({ children, ...rest }: CardFooterprops) => {
+  return (
+    <Box borderTopWidth="1px" {...rest}>
+      {children}
+    </Box>
+  );
+};

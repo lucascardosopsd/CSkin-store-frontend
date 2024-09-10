@@ -10,7 +10,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { SkinProps } from "../../types/skins";
-import Card from "../ui/Card";
+import { Card, CardContent, CardFooter, CardHeader } from "../ui/Card";
 import { formatPrice } from "../../tools/formatPrice";
 import { LuShoppingCart } from "react-icons/lu";
 
@@ -29,7 +29,9 @@ const SkinCard = ({ skin }: SkinCardProps) => {
       _hover={{
         transform: "scale(1.1)",
       }}
-      cardHeader={
+      h={320}
+    >
+      <CardHeader>
         <Box
           bgGradient={
             colorMode == "light"
@@ -39,9 +41,10 @@ const SkinCard = ({ skin }: SkinCardProps) => {
         >
           <Image src={skin.image} />
         </Box>
-      }
-      cardContent={
-        <Flex flexDir="column" padding={4}>
+      </CardHeader>
+
+      <CardContent>
+        <Flex flexDir="column" alignItems="start" h="full">
           <Text
             fontSize={18}
             fontWeight="bold"
@@ -63,24 +66,35 @@ const SkinCard = ({ skin }: SkinCardProps) => {
             <Text>Ft/{skin.float}</Text>
           </Flex>
         </Flex>
-      }
-      cardFooter={
-        <Flex borderTopWidth="1px">
+      </CardContent>
+
+      <CardFooter>
+        <Flex>
           <Button
             w="100%"
             variant="ghost"
             bgGradient="linear(to-r, yellow.500, orange.600)"
             color="gray.100"
             fontWeight="bold"
+            roundedRight={0}
+            roundedTop={0}
           >
             COMPRAR
           </Button>
-          <Button variant="ghost">
+          <Button
+            variant="ghost"
+            roundedLeft={0}
+            roundedTop={0}
+            transition="all 0.2s"
+            _hover={{
+              bg: "orange.500",
+            }}
+          >
             <Icon as={LuShoppingCart} fontSize={22} />
           </Button>
         </Flex>
-      }
-    />
+      </CardFooter>
+    </Card>
   );
 };
 
