@@ -16,7 +16,7 @@ interface ModalProps extends FlexProps {
   children: ReactNode;
   isOpen: boolean;
   onClose: () => void;
-  title?: string;
+  modalTitle?: ReactNode | string;
   onSubmit?: () => {};
   submitTitle?: string;
 }
@@ -25,7 +25,7 @@ const Modal = ({
   children,
   isOpen,
   onClose,
-  title,
+  modalTitle,
   onSubmit,
   submitTitle,
   ...rest
@@ -56,7 +56,8 @@ const Modal = ({
       {...rest}
     >
       <Flex alignItems="center" w="full">
-        <Text fontSize={24}>{title}</Text>
+        <Text fontSize={24}>{modalTitle}</Text>
+
         <Spacer />
         <Icon
           as={LuX}
