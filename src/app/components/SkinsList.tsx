@@ -9,15 +9,7 @@ interface SkinsListProps {
 
 const SkinsGrid = ({ skins }: SkinsListProps) => {
   return (
-    <Box
-      overflowY="auto"
-      mt={2}
-      pr={{
-        base: 0,
-        lg: 5,
-      }}
-      pb={10}
-    >
+    <Box overflowY="auto" mt={2} p={5} pb={10}>
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",
