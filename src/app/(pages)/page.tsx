@@ -1,8 +1,6 @@
-import { Container, Flex, Spacer } from "@chakra-ui/react";
+import { Container, Flex } from "@chakra-ui/react";
 import SkinsList from "../components/SkinsList";
-import InputSearch from "../components/InputSearch";
-import SkinsListOrder from "../components/SkinsListOrder";
-import Filters from "../components/Filters";
+import SearchForm from "../components/forms/SearchForm";
 
 export default function Home() {
   return (
@@ -14,14 +12,16 @@ export default function Home() {
       p={5}
       pb={0}
     >
-      <Flex gap={5}>
-        <SkinsListOrder />
-        <InputSearch />
+      <Flex
+        display={{
+          base: "none",
+          md: "flex",
+        }}
+        flexDir="column"
+        gap={2}
+      >
+        {<SearchForm />}
       </Flex>
-
-      <Spacer />
-
-      <Filters />
 
       <SkinsList />
     </Container>

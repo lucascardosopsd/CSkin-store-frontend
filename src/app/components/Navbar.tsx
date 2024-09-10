@@ -2,6 +2,7 @@
 
 import {
   Button,
+  Divider,
   Flex,
   Image,
   Spacer,
@@ -9,6 +10,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { LuMoon, LuSun } from "react-icons/lu";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   const { toggleColorMode } = useColorMode();
@@ -26,9 +28,15 @@ const Navbar = () => {
 
       <Spacer />
 
-      <Button size="sm" onClick={toggleColorMode}>
-        {colorMode == "dark" ? <LuSun /> : <LuMoon />}
-      </Button>
+      <Flex gap={2} alignItems="center">
+        <Button size="sm" onClick={toggleColorMode} h={10} w={10}>
+          {colorMode == "dark" ? <LuSun /> : <LuMoon />}
+        </Button>
+
+        <Divider orientation="vertical" h={10} />
+
+        <MobileMenu />
+      </Flex>
     </Flex>
   );
 };
