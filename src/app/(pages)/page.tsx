@@ -34,15 +34,19 @@ export default async function Home({ searchParams }: HomeProps) {
     <Container
       maxW="1080px"
       display="flex"
+      justifyContent="space-between"
       flexDir="column"
       gap={2}
       p={5}
-      pb={0}
       mt="8rem"
     >
       <SkinsGrid skins={skins} />
 
-      <Paginate pages={pages} w="full" justifyContent="end" />
+      <Paginate
+        pages={pages}
+        w="full"
+        justifyContent={{ base: "center", lg: "end" }}
+      />
     </Container>
   );
 }
