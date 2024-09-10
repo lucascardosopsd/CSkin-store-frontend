@@ -14,7 +14,7 @@ export default async function Home() {
       gap={2}
       p={5}
       pb={0}
-      pt="15svh"
+      mt="8rem"
     >
       <SkinsGrid skins={data} />
     </Container>

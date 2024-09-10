@@ -1,8 +1,8 @@
 "use client";
 import { ReactNode } from "react";
-import Navbar from "../components/Navbar";
 import { Box, Flex } from "@chakra-ui/react";
 import FilterForm from "../components/forms/FilterForm";
+import Navbar from "../components/Navbar";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
