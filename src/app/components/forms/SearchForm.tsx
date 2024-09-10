@@ -64,28 +64,28 @@ const SearchForm = () => {
           <Divider
             orientation="vertical"
             h={12}
-            display={{ base: "none", md: "block" }}
+            display={{ base: "none", lg: "block" }}
           />
 
-          <Divider w="full" display={{ base: "block", md: "none" }} />
+          <Divider w="full" display={{ base: "block", lg: "none" }} />
 
-          <Text display={{ base: "block", md: "none" }}>Preço</Text>
+          <Text display={{ base: "block", lg: "none" }}>Preço</Text>
 
           <Input placeholder="R$0,00" maxLength={10} />
 
-          <Text display={{ base: "none", md: "block" }}>-</Text>
+          <Text display={{ base: "none", lg: "block" }}>-</Text>
 
           <Input placeholder="R$10,00" maxLength={10} />
 
           <Divider
             orientation="vertical"
             h={12}
-            display={{ base: "none", md: "block" }}
+            display={{ base: "none", lg: "block" }}
           />
 
-          <Divider w="full" display={{ base: "block", md: "none" }} />
+          <Divider w="full" display={{ base: "block", lg: "none" }} />
 
-          <Text display={{ base: "block", md: "none" }}>Float</Text>
+          <Text display={{ base: "block", lg: "none" }}>Float</Text>
 
           <Input placeholder="Float" type="number" maxLength={2} />
         </Box>
