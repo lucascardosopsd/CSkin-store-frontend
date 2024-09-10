@@ -1,4 +1,6 @@
-import { Button, Flex, Icon, Image, Spacer, Text } from "@chakra-ui/react";
+"use client";
+
+import { Box, Button, Flex, Icon, Image, Spacer, Text } from "@chakra-ui/react";
 import { SkinProps } from "../types/skins";
 import Card from "./Card";
 import { formatPrice } from "../tools/formatPrice";
@@ -13,7 +15,15 @@ const SkinCard = ({ skin }: SkinCardProps) => {
     <Card
       m="auto"
       key={skin.id}
-      cardHeader={<Image src={skin.image} />}
+      transition="all 0.2s"
+      _hover={{
+        transform: "scale(1.1)",
+      }}
+      cardHeader={
+        <Box bgGradient="radial(circle, gray.600, gray.800)">
+          <Image src={skin.image} />
+        </Box>
+      }
       cardContent={
         <Flex flexDir="column" padding={4}>
           <Text fontSize={18} fontWeight="bold" lineHeight={1}>
