@@ -3,19 +3,7 @@ import api from "../lib/axios";
 import { AxiosSkinsResProps } from "../types/skins";
 import SkinsGrid from "../components/skins/SkinsGrid";
 import Paginate from "../components/misc/Paginate";
-
-interface HomeProps {
-  searchParams?: {
-    name?: string;
-    category?: string;
-    order?: string;
-    orderBy?: string;
-    startPrice?: string;
-    endPrice?: string;
-    float?: string;
-    page?: string;
-  };
-}
+import { HomeProps } from "../types/home";
 
 export default async function Home({ searchParams = {} }: HomeProps) {
   const page = Number(searchParams?.page || 1);
