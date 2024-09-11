@@ -13,3 +13,11 @@ export interface AxiosSkinsResProps {
   skins: SkinProps[];
   pages: number;
 }
+
+export interface SkinsListProps {
+  skins: SkinProps[];
+}
+
+export interface SkinCardProps {
+  skin: SkinProps;
+}

@@ -1,11 +1,7 @@
 "use client";
 import { Box, Grid, useColorMode } from "@chakra-ui/react";
-import { SkinProps } from "../../types/skins";
+import { SkinsListProps } from "../../types/skins";
 import SkinCard from "./SkinCard";
-
-interface SkinsListProps {
-  skins: SkinProps[];
-}
 
 const SkinsGrid = ({ skins }: SkinsListProps) => {
   const { colorMode } = useColorMode();
