@@ -34,6 +34,7 @@ const Modal = ({
 
   return (
     <Flex
+      role="modal"
       as={motion.div}
       display={{
         base: "flex",
@@ -49,9 +50,18 @@ const Modal = ({
       bg={colorMode == "dark" ? "gray.900" : "gray.200"}
       p={5}
       animate={isOpen ? "visible" : "hidden"}
+      initial={{ visibility: "hidden" }}
       variants={{
-        visible: { x: 0, transition: { ease: "easeIn" } },
-        hidden: { x: 1000, transition: { ease: "easeOut" } },
+        visible: {
+          x: 0,
+          visibility: "visible",
+          transition: { ease: "easeIn" },
+        },
+        hidden: {
+          x: 1000,
+          transitionEnd: { visibility: "hidden" },
+          transition: { ease: "easeOut" },
+        },
       }}
       {...rest}
     >
