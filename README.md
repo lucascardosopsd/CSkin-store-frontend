@@ -55,6 +55,8 @@ API_URL = "http://localhost:3333";
 - SkinsGrid: Recebe as skins da página atual e cria um grid com os cards correspondentes
 - SkinCard: Recebe os dados de uma skin e renderiza um card com título, categoria, imagem, preço, float, categoria e botão de compra
 
+---
+
 ### Testes
 
 Os testes foram do tipo integração e abordaram as seguintes funcionalidades:
