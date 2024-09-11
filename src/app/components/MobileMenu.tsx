@@ -1,5 +1,5 @@
 "use client";
-import { Button, Icon, Image, useColorMode } from "@chakra-ui/react";
+import { Box, Button, Icon, Image, useColorMode } from "@chakra-ui/react";
 import { useState } from "react";
 import { LuFilter } from "react-icons/lu";
 import Modal from "./ui/Modal";
@@ -11,7 +11,7 @@ const MobileMenu = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
+    <Box data-testid="mobileMenu">
       <Button
         onClick={() => setOpen(true)}
         w={10}
@@ -34,7 +34,7 @@ const MobileMenu = () => {
       >
         <FilterForm afterSubmit={() => setOpen(false)} />
       </Modal>
-    </>
+    </Box>
   );
 };
 
