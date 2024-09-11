@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  Box,
   Button,
   Divider,
   Flex,
@@ -39,7 +38,9 @@ const Navbar = () => {
             alignItems="center"
           >
             CSkin
-            <Box fontWeight={200}>Store</Box>
+            <Text as="span" fontWeight={200}>
+              Store
+            </Text>
           </Text>
 
           <Divider orientation="vertical" h={10} />
