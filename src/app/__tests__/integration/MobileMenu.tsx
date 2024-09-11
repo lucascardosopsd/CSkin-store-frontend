@@ -19,6 +19,6 @@ describe("Mobile menu render without filter form", () => {
   it("Should be rendered", () => {
     render(<MobileMenu />);
 
-    expect(screen.getByTestId("mobileMenu")).toBeInTheDocument();
+    expect(screen.getByRole("mobileMenu")).toBeInTheDocument();
   });
 });
