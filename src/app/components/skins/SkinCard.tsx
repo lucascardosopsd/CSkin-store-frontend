@@ -27,7 +27,7 @@ const SkinCard = ({ skin }: SkinCardProps) => {
       key={skin.id}
       transition="all 0.2s"
       _hover={{
-        transform: "scale(1.1)",
+        transform: "scale(1.04)",
         boxShadow: "glow",
       }}
     >
