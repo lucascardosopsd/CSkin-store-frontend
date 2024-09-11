@@ -1,3 +1,3 @@
-export interface FIlterFormProps {
+export type FIlterFormProps = {
   afterSubmit?: () => void;
-}
+};
