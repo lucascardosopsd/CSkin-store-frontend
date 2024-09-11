@@ -97,6 +97,7 @@ const FilterForm = ({ afterSubmit }: FIlterFormProps) => {
 
           {/* Order Filter */}
           <Select
+            role="orderSelect"
             placeholder="Ordenar"
             id="selectOrder"
             {...form.register("orderBy")}
@@ -109,7 +110,11 @@ const FilterForm = ({ afterSubmit }: FIlterFormProps) => {
 
           {/* Name Filter */}
 
-          <Input placeholder="Busque por nome" {...form.register("name")} />
+          <Input
+            placeholder="Busque por nome"
+            {...form.register("name")}
+            role="inputName"
+          />
 
           {/* Categories Filter */}
 
@@ -209,7 +214,13 @@ const FilterForm = ({ afterSubmit }: FIlterFormProps) => {
           />
         </Box>
 
-        <Button type="submit" bg="orange.500" color="white" fontWeight={600}>
+        <Button
+          type="submit"
+          bg="orange.500"
+          color="white"
+          fontWeight={600}
+          role="applyFilter"
+        >
           Aplicar
         </Button>
       </Flex>
