@@ -1,6 +1,6 @@
 "use client";
 import { Box, Button, Icon, Image, useColorMode } from "@chakra-ui/react";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { LuFilter } from "react-icons/lu";
 import Modal from "./ui/Modal";
 import FilterForm from "./forms/FilterForm";
@@ -33,7 +33,9 @@ const MobileMenu = () => {
         modalTitle={<Image src="/logo.png" alt="Logo" boxSize="100px" />}
         submitTitle="Aplicar"
       >
-        <FilterForm afterSubmit={() => setOpen(false)} />
+        <Suspense>
+          <FilterForm afterSubmit={() => setOpen(false)} />
+        </Suspense>
       </Modal>
     </Box>
   );
