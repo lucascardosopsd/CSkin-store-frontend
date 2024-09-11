@@ -1,4 +1,4 @@
-export interface SkinProps {
+export type SkinProps = {
   id: string;
   name: string;
   image: string;
@@ -7,7 +7,7 @@ export interface SkinProps {
   price: number;
   createdAt: string;
   updatedAt: string;
-}
+};
 
 export type AxiosSkinsResProps = {
   skins: SkinProps[];
