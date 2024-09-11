@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Desafio CSkin Store (Front-end)
 
-## Getting Started
+Projeto desenvolvido para o desafio da empresa CSkin Store com o propósito de servir de front end para a api localizada [neste repositório](https://github.com/lucascardosopsd/CSkin-store-backend.git)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Tecnologias
+
+- Next.js 14
+- Chakra UI
+- Typescript
+- React Hook Form
+- Zod
+- Jest
+- Axios
+
+---
+
+### Requisitos
+
+- Nodejs v20+
+- Yarn 1.22+
+
+---
+
+### Como Rodar
+
+1. Abra o terminal na pasta do projeto e digite yarn
+2. Crie um arquivo na .env na raiz do projeto e coloque a seguinte varíavel
+
+```jsx
+API_URL = "http://localhost:3333";
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Digite no terminal `yarn dev`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Funcionalidades
 
-## Learn More
+- Listar skins
+- Buscar skins por nome, ordem, ordem de preço, valor do float, preço inicial e preço final
+- Paginação
+- Tema claro e escuro
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Componentes Principais
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Home: Faz uma chamada paginada ao banco de dados na rota /skins, recebe dela a quantidade de skins disponível na página atual e passa os dados para o grid de skins. Além disso exibe o componente de paginação.
+- Navbar: Exibe o logo da loja e o botão para alternar o tema
+- MobileMenu: Menu exibido apenas quando o tamanho da tela for compatível com celular ou tablet
+- FilterForm: Fomulário utilizado para enviar a query de filtro de busca para o banco de dados
+- Paginate: Exibe a quantidade de páginas disponível, avança e retrocede páginas baseando-se na query da URL
+- SkinsGrid: Recebe as skins da página atual e cria um grid com os cards correspondentes
+- SkinCard: Recebe os dados de uma skin e renderiza um card com título, categoria, imagem, preço, float, categoria e botão de compra
 
-## Deploy on Vercel
+### Testes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Os testes foram do tipo integração e abordaram as seguintes funcionalidades:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Renderizar navbar com menu mobile
+- Renderizar menu mobile com o formulário de filtros
+- Funcionalidade de pesquisa por nome e ordem
+- Renderizar menu mobile sem o formulário de filtro
+- Renderizar a Home com a grade de skins
+
+Para rodar os testes basta digitar o comando `test:watch` no terminal do projeto
+
+---
+
+### Considerações Técnicas
+
+- A proposta dos testes realizados neste projeto foram apenas para fins de demonstração, portanto nem todos os componentes e possibilidades foram testados.
+- As possibilidades de categorias estão localizadas em `src/constants/categories.ts`
