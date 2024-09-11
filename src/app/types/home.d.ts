@@ -1,4 +1,4 @@
-export interface HomeProps {
+export type HomeProps = {
   searchParams?: {
     name?: string;
     category?: string;
@@ -9,4 +9,4 @@ export interface HomeProps {
     float?: string;
     page?: string;
   };
-}
+};
