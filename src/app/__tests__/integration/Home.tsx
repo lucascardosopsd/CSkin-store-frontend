@@ -1,15 +1,15 @@
 import Home from "@/app/(pages)/page";
+import { Providers } from "@/app/components/Providers";
 import api from "@/app/lib/axios";
 import { render, screen } from "@testing-library/react";
 
 jest.mock("../../lib/axios");
-jest.mock("../../components/skins/SkinsGrid", () => () => <div />);
 jest.mock("../../components/misc/Paginate", () => () => <div />);
 
 jest.mock("../../lib/axios");
 
 describe("Home component", () => {
-  it("Should render home page without rendering children", async () => {
+  it("Should render home page with skins grid", async () => {
     (api.get as jest.Mock).mockResolvedValueOnce({
       data: {
         skins: [
@@ -35,7 +35,7 @@ describe("Home component", () => {
     });
 
     // Render component
-    render(await Home({ searchParams: {} }));
+    render(await Home({ searchParams: {} }), { wrapper: Providers });
 
     // check main component is in the document
     expect(screen.getByTestId("mainContainer")).toBeInTheDocument();

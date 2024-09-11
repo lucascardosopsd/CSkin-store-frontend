@@ -49,8 +49,8 @@ const SkinsGrid = ({ skins }: SkinsListProps) => {
           gap={6}
           mx="auto"
         >
-          {skins.map((skin) => (
-            <SkinCard skin={skin} key={skin.id} />
+          {skins.map((skin, index) => (
+            <SkinCard skin={skin} key={skin.id || index} />
           ))}
         </Grid>
       </Box>
