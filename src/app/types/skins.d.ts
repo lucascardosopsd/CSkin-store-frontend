@@ -9,15 +9,15 @@ export interface SkinProps {
   updatedAt: string;
 }
 
-export interface AxiosSkinsResProps {
+export type AxiosSkinsResProps = {
   skins: SkinProps[];
   pages: number;
-}
+};
 
-export interface SkinsListProps {
+export type SkinsListProps = {
   skins: SkinProps[];
-}
+};
 
-export interface SkinCardProps {
+export type SkinCardProps = {
   skin: SkinProps;
-}
+};
