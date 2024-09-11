@@ -1,5 +1,6 @@
 "use client";
 import { categories } from "@/app/constants/categories";
+import { FIlterFormProps } from "@/app/types/filterForm";
 import { filtersValidator } from "@/app/validators/filters";
 import {
   Box,
@@ -15,10 +16,6 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { NumericFormat } from "react-number-format";
 import { z } from "zod";
-
-interface FIlterFormProps {
-  afterSubmit?: () => void;
-}
 
 const FilterForm = ({ afterSubmit }: FIlterFormProps) => {
   const form = useForm({
