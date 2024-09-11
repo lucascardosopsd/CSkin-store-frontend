@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 import FilterForm from "../components/forms/FilterForm";
 import Navbar from "../components/Navbar";
@@ -19,7 +19,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
             lg: "block",
           }}
         >
-          <FilterForm />
+          <Suspense>
+            <FilterForm />
+          </Suspense>
         </Box>
 
         {children}
