@@ -11,7 +11,7 @@ const MobileMenu = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Box data-testid="mobileMenu">
+    <Box role="mobileMenu">
       <Button
         onClick={() => setOpen(true)}
         w={10}
@@ -21,6 +21,7 @@ const MobileMenu = () => {
           base: "flex",
           lg: "none",
         }}
+        role="mobileMenuTrigger"
       >
         <Icon as={LuFilter} />
       </Button>
