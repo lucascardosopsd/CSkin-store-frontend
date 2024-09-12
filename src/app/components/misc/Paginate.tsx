@@ -1,5 +1,13 @@
 "use client";
-import { Button, Flex, FlexProps, Icon, useColorMode } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  FlexProps,
+  Icon,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
@@ -73,10 +81,26 @@ const Paginate = ({ pages, ...rest }: PaginateProps) => {
           onClick={() => handleSetPage(index + 1)}
           key={index}
           variant="outline"
+          display={{
+            base: "none",
+            xl: "block",
+          }}
         >
           {index + 1}
         </Button>
       ))}
+
+      <Box
+        alignItems="center"
+        justifyContent="center"
+        display={{
+          base: "flex",
+          xl: "none",
+        }}
+        w={10}
+      >
+        <Text fontSize={22}>{paramsPage}</Text>
+      </Box>
       <Button
         onClick={handleNext}
         cursor="pointer"
