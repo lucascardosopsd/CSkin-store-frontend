@@ -1,6 +1,18 @@
+# README.md [Front-end]
+
 # Desafio CSkin Store (Front-end)
 
 Projeto desenvolvido para o desafio da empresa CSkin Store com o propósito de servir de front end para a api localizada [neste repositório](https://github.com/lucascardosopsd/CSkin-store-backend.git)
+
+---
+
+Screenshots
+
+![image.png](image.png)
+
+![image.png](image%201.png)
+
+![image.png](image%202.png)
 
 ---
 
@@ -29,7 +41,7 @@ Projeto desenvolvido para o desafio da empresa CSkin Store com o propósito de s
 2. Crie um arquivo na .env na raiz do projeto e coloque a seguinte varíavel
 
 ```jsx
-API_URL = "http://localhost:3333";
+API_URL="http://localhost:3333"
 ```
 
 1. Digite no terminal `yarn dev`
@@ -54,8 +66,6 @@ API_URL = "http://localhost:3333";
 - Paginate: Exibe a quantidade de páginas disponível, avança e retrocede páginas baseando-se na query da URL
 - SkinsGrid: Recebe as skins da página atual e cria um grid com os cards correspondentes
 - SkinCard: Recebe os dados de uma skin e renderiza um card com título, categoria, imagem, preço, float, categoria e botão de compra
-
----
 
 ### Testes
 
