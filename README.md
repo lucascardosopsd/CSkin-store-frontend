@@ -37,7 +37,7 @@ Projeto desenvolvido para o desafio da empresa CSkin Store com o propósito de s
 
 ### Como Rodar
 
-1. Abra o terminal na pasta do projeto e digite yarn
+1. Abra o terminal na pasta do projeto e digite `yarn`
 2. Crie um arquivo na .env na raiz do projeto e coloque a seguinte varíavel
 
 ```jsx
