@@ -41,7 +41,7 @@ Projeto desenvolvido para o desafio da empresa CSkin Store com o propósito de s
 2. Crie um arquivo na .env na raiz do projeto e coloque a seguinte varíavel
 
 ```jsx
-API_URL="http://localhost:3333";
+API_URL=http://localhost:3333
 ```
 
 1. Digite no terminal `yarn dev`
