@@ -6,13 +6,13 @@ Projeto desenvolvido para o desafio da empresa CSkin Store com o propósito de s
 
 ---
 
-Screenshots
+### Screenshots
 
-![image.png](image.png)
+![image.png](https://i.imgur.com/3hhDysi.png)
 
-![image.png](image%201.png)
+![image.png](https://i.imgur.com/eusrbVv.png)
 
-![image.png](image%202.png)
+![image.png](https://i.imgur.com/Dfigg1y.png)
 
 ---
 
@@ -41,7 +41,7 @@ Screenshots
 2. Crie um arquivo na .env na raiz do projeto e coloque a seguinte varíavel
 
 ```jsx
-API_URL="http://localhost:3333"
+API_URL = "http://localhost:3333";
 ```
 
 1. Digite no terminal `yarn dev`
